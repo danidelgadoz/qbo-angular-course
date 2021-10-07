@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ExampleComponentComponent } from './example/example-component/example-component.component';
+import { ExampleBootstrapComponent } from './example/example-bootstrap/example-bootstrap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleComponentComponent
+    ExampleComponentComponent,
+    ExampleBootstrapComponent
   ],
   imports: [
     BrowserModule,
