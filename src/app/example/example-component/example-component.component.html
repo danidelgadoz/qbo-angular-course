@@ -5,3 +5,12 @@
 <br>
 
 <img [src]="course.image" width="400" alt="course-image">
+
+<br>
+
+<label>Change sessions amount</label>
+<input type="number" [(ngModel)]="course.session" />
+
+<br>
+
+The course have {{ course.session }} sessions.
