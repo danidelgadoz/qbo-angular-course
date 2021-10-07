@@ -16,4 +16,11 @@ export class ExampleComponentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  changeCourseImage() {
+    console.log('before change image:', this.course.image);
+    this.course.image = 'https://scotch-res.cloudinary.com/image/upload/w_1500,q_auto:good,f_auto/media/1/NQ9wdTPDQnmbZgNlcnao_my-first-angular-site.jpg';
+    console.log('after change image:', this.course.image);
+  }
+
 }
