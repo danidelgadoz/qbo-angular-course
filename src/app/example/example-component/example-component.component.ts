@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ExampleComponentComponent implements OnInit {
   course = {
     name: 'Angular for Developers',
-    price: 100
+    image: 'https://miro.medium.com/max/1302/1*MCJlRDOghcQFh-GSVBpV1A.png'
   };
 
   constructor() { }
