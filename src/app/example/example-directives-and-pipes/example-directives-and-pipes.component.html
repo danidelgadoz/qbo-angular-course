@@ -1,8 +1,23 @@
 <h1>Directives & Pipes examples</h1>
 
-<div class="container">
+<div>
+  <button (click)="showProducts()">Show Products</button>
+  <button (click)="showClients()">Show Clients</button>
+</div>
+
+<div class="container" *ngIf="activeSection === 0">
   <h3>Productos</h3>
   <ul>
     <li *ngFor="let p of products"> {{p.name}} - {{p.price}}</li>
+  </ul>
+</div>
+
+<div class="container" *ngIf="activeSection !== 0">
+  <h3>Clients</h3>
+  <ul>
+    <li>Juan Perez</li>
+    <li>Ronaldo Nazario</li>
+    <li>Leonel Messi</li>
+    <li>Paolo Gurerrero</li>
   </ul>
 </div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example-directives-and-pipes.component.scss']
 })
 export class ExampleDirectivesAndPipesComponent implements OnInit {
-
+  activeSection = 0;
   products = [
     { name: 'Laptop Macbook Pro', price: 8000 },
     { name: 'Monitor Samsung', price: 1500 },
@@ -17,6 +17,16 @@ export class ExampleDirectivesAndPipesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showProducts(): void {
+    console.log('showProducts...');
+    this.activeSection = 0;
+  }
+
+  showClients(): void {
+    console.log('showProducts...');
+    this.activeSection = 1;
   }
 
 }
