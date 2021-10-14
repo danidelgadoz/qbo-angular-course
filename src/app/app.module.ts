@@ -10,6 +10,7 @@ import { ExampleBootstrapComponent } from './example/example-bootstrap/example-b
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExampleAngularMaterialComponent } from './example/example-angular-material/example-angular-material.component';
 import { ExampleFlexLayoutComponent } from './example/example-flex-layout/example-flex-layout.component';
+import { ExampleDirectivesAndPipesComponent } from './example/example-directives-and-pipes/example-directives-and-pipes.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ExampleFlexLayoutComponent } from './example/example-flex-layout/exampl
     ExampleBootstrapComponent,
     ExampleAngularMaterialComponent,
     ExampleFlexLayoutComponent,
+    ExampleDirectivesAndPipesComponent,
   ],
   imports: [
     BrowserModule,
