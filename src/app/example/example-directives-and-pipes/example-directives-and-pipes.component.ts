@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example-directives-and-pipes.component.scss']
 })
 export class ExampleDirectivesAndPipesComponent implements OnInit {
+  currentDate = new Date();
   activeSection = 0;
   products = [
     { name: 'Laptop Macbook Pro', price: 8000 },
-    { name: 'Monitor Samsung', price: 1500 },
+    { name: 'Monitor Samsung', price: 1500.5 },
     { name: 'Keyboard magic 2', price: 800 },
-    { name: 'Headphones', price: 150 },
+    { name: 'Headphones', price: 150.3599 },
   ];
 
   constructor() { }

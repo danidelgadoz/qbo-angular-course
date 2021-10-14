@@ -1,4 +1,5 @@
 <h1>Directives & Pipes examples</h1>
+<h3>{{ currentDate | date:'medium' }}</h3>
 
 <div>
   <button (click)="showProducts()">Show Products</button>
@@ -8,7 +9,7 @@
 <div class="container" *ngIf="activeSection === 0">
   <h3 appHighlight>Productos</h3>
   <ul>
-    <li *ngFor="let p of products"> {{p.name}} - {{p.price}}</li>
+    <li *ngFor="let p of products"> {{p.name}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}</li>
   </ul>
 </div>
 
