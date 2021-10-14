@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExampleAngularMaterialComponent } from './example/example-angular-material/example-angular-material.component';
 import { ExampleFlexLayoutComponent } from './example/example-flex-layout/example-flex-layout.component';
 import { ExampleDirectivesAndPipesComponent } from './example/example-directives-and-pipes/example-directives-and-pipes.component';
+import { HighlightDirective } from './example/example-directives-and-pipes/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ExampleDirectivesAndPipesComponent } from './example/example-directives
     ExampleAngularMaterialComponent,
     ExampleFlexLayoutComponent,
     ExampleDirectivesAndPipesComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
