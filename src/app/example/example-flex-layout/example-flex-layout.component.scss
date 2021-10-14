@@ -1,0 +1,13 @@
+div {
+  border: 2px solid red;
+  padding: 8px;
+  margin-bottom: 16px;
+  height: 200px;
+
+  div {
+    border: 2px solid blue;
+    padding: 16px;
+    height: 50px;
+    margin-bottom: 0px;
+  }
+}

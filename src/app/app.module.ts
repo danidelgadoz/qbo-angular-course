@@ -9,6 +9,7 @@ import { ExampleComponentComponent } from './example/example-component/example-c
 import { ExampleBootstrapComponent } from './example/example-bootstrap/example-bootstrap.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExampleAngularMaterialComponent } from './example/example-angular-material/example-angular-material.component';
+import { ExampleFlexLayoutComponent } from './example/example-flex-layout/example-flex-layout.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ExampleAngularMaterialComponent } from './example/example-angular-mater
     ExampleComponentComponent,
     ExampleBootstrapComponent,
     ExampleAngularMaterialComponent,
+    ExampleFlexLayoutComponent,
   ],
   imports: [
     BrowserModule,
