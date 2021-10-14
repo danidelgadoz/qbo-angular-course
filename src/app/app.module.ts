@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from './shared/material.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { ExampleAngularMaterialComponent } from './example/example-angular-mater
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    FlexLayoutModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
