@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example-directives-and-pipes.component.scss']
 })
 export class ExampleDirectivesAndPipesComponent implements OnInit {
+  examplePipeString = 'hello word';
   currentDate = new Date();
   activeSection = 0;
   products = [
