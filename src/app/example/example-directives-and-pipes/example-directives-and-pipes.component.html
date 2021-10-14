@@ -1,4 +1,4 @@
-<h1 appHighlight>Directives & Pipes examples</h1>
+<h1>Directives & Pipes examples</h1>
 
 <div>
   <button (click)="showProducts()">Show Products</button>
@@ -6,14 +6,14 @@
 </div>
 
 <div class="container" *ngIf="activeSection === 0">
-  <h3>Productos</h3>
+  <h3 appHighlight>Productos</h3>
   <ul>
     <li *ngFor="let p of products"> {{p.name}} - {{p.price}}</li>
   </ul>
 </div>
 
 <div class="container" *ngIf="activeSection !== 0">
-  <h3>Clients</h3>
+  <h3 appHighlight>Clients</h3>
   <ul>
     <li>Juan Perez</li>
     <li>Ronaldo Nazario</li>
