@@ -13,6 +13,7 @@ import { ExampleFlexLayoutComponent } from './example/example-flex-layout/exampl
 import { ExampleDirectivesAndPipesComponent } from './example/example-directives-and-pipes/example-directives-and-pipes.component';
 import { HighlightDirective } from './example/example-directives-and-pipes/highlight.directive';
 import { OnlyNumber } from './example/example-directives-and-pipes/only-number.directive';
+import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OnlyNumber } from './example/example-directives-and-pipes/only-number.d
     ExampleFlexLayoutComponent,
     ExampleDirectivesAndPipesComponent,
     HighlightDirective,
-    OnlyNumber
+    OnlyNumber,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
