@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -14,14 +14,19 @@ export class ProductListComponent implements OnInit {
     { id: 4, name: 'Headphones', price: 150.3599 },
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     // TODO: Request for products from a API (backend) instead having them on hardcode
   }
 
   onNavigateToProductDetail(id: number): void {
-    this.router.navigate(['/products', id]);
+    // this.router.navigate(['/products', id]);
+    // Use this way to be more God
+    this.router.navigate([id], { relativeTo: this.activatedRoute });
   }
 
 }
