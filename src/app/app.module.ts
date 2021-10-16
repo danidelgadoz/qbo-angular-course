@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from './shared/material.module';
@@ -33,6 +34,12 @@ import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
+    RouterModule.forRoot([
+      { path: 'example-component', component: ExampleComponentComponent },
+      { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
+      { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
+      { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
