@@ -45,6 +45,8 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
       { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
       { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
       { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
       { path: '', redirectTo: 'example-component', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ])
