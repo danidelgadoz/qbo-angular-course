@@ -18,6 +18,8 @@ import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
     ReversePipe,
     PageNotFoundComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
     FlexLayoutModule,
     MaterialModule,
     RouterModule.forRoot([
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
       { path: 'example-component', component: ExampleComponentComponent },
       { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
       { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
