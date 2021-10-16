@@ -16,6 +16,8 @@ import { HighlightDirective } from './example/example-directives-and-pipes/highl
 import { OnlyNumber } from './example/example-directives-and-pipes/only-number.directive';
 import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HighlightDirective,
     OnlyNumber,
     ReversePipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductListComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
