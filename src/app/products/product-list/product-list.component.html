@@ -1,7 +1,7 @@
 <h3>Productos</h3>
 <ul>
   <li *ngFor="let p of products">
-    <div [routerLink]="['/products', p.id]">
+    <div (click)="onNavigateToProductDetail(p.id)">
       {{p.name}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
     </div>
   </li>
