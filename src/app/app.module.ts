@@ -39,6 +39,7 @@ import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe
       { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
       { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
       { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
+      { path: '', redirectTo: 'component', pathMatch: 'full' },
     ])
   ],
   providers: [],
