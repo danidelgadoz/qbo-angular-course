@@ -15,6 +15,7 @@ import { ExampleDirectivesAndPipesComponent } from './example/example-directives
 import { HighlightDirective } from './example/example-directives-and-pipes/highlight.directive';
 import { OnlyNumber } from './example/example-directives-and-pipes/only-number.directive';
 import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe
     ExampleDirectivesAndPipesComponent,
     HighlightDirective,
     OnlyNumber,
-    ReversePipe
+    ReversePipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { ReversePipe } from './example/example-directives-and-pipes/reverse.pipe
       { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
       { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
       { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
-      { path: '', redirectTo: 'component', pathMatch: 'full' },
+      { path: '', redirectTo: 'example-component', pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent },
     ])
   ],
   providers: [],
