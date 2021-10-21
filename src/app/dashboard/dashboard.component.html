@@ -2,10 +2,15 @@
   <span>Angular QBO</span>
 
   <div fxFlex="row">
-    <button mat-button [routerLink]="['example-component']">Components</button>
-    <button mat-button [routerLink]="['example-angular-material']">Material</button>
-    <button mat-button [routerLink]="['example-flex-layout']">FlexLayout</button>
-    <button mat-button [routerLink]="['example-directives-and-pipes']">Directives/Pipes</button>
+
+    <button mat-button [matMenuTriggerFor]="menu">Examples</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['example-component']">Components</button>
+      <button mat-menu-item [routerLink]="['example-angular-material']">Material</button>
+      <button mat-menu-item [routerLink]="['example-flex-layout']">FlexLayout</button>
+      <button mat-menu-item [routerLink]="['example-directives-and-pipes']">Directives/Pipes</button>
+    </mat-menu>
+
     <button mat-button [routerLink]="['products']">Products</button>
 
     <div fxFlex></div>
