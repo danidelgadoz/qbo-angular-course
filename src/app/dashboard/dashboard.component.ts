@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onLogout(): void {
-    sessionStorage.setItem('isUserLogged', 'false');
+    sessionStorage.removeItem('userSession');
     this.router.navigate(['auth']);
   }
 

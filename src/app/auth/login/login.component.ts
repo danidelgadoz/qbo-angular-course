@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(email: string, password: string): void {
-    sessionStorage.setItem('isUserLogged', 'true');
+    sessionStorage.setItem('userSession', '3661411c65331184ac73d8660d0b4648');
     this.router.navigate(['dashboard']);
   }
 

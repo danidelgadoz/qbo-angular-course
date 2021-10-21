@@ -22,6 +22,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AuthComponent } from './auth/auth.component';
       {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthGuard],
         children: [
           { path: 'example-component', component: ExampleComponentComponent },
           { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
