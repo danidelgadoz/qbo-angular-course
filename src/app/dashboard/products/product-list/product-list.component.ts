@@ -26,4 +26,8 @@ export class ProductListComponent implements OnInit {
     this.router.navigate([id], { relativeTo: this.activatedRoute });
   }
 
+  onHandleAddProduct(): void {
+    this.productService.addProduct({ id: 5, name: 'Funko', price: 50.99 })
+  }
+
 }

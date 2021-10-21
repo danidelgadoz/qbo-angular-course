@@ -24,9 +24,9 @@ export class ProductService {
     return null;
   }
 
-  // This method was for an hipotetic example
-  getProductsAmount(): number {
-    return this.products.length;
+  addProduct(product: any): any {
+    // TODO: Request for product from a API (backend) instead having them on hardcode
+    return this.products.push(product);
   }
 
 }
