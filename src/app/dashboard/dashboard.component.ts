@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from './products/product.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +11,9 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private productService: ProductService,
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getAllProducts();
   }
 
   onLogout(): void {
