@@ -21,6 +21,7 @@ import { ProductDetailComponent } from './dashboard/products/product-detail/prod
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductDetailComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +49,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FlexLayoutModule,
     MaterialModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
+      {
+        path: 'auth',
+        component: AuthComponent,
+        children: [
+          { path: 'login', component: LoginComponent },
+          { path: 'register', component: RegisterComponent },
+        ]
+      },
       {
         path: 'dashboard',
         component: DashboardComponent,
