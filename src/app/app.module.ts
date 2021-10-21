@@ -55,6 +55,7 @@ import { AuthComponent } from './auth/auth.component';
         children: [
           { path: 'login', component: LoginComponent },
           { path: 'register', component: RegisterComponent },
+          { path: '', redirectTo: 'login', pathMatch: 'full' },
         ]
       },
       {
@@ -69,7 +70,7 @@ import { AuthComponent } from './auth/auth.component';
           { path: 'products/:id', component: ProductDetailComponent },
         ]
       },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: '', redirectTo: 'auth', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ])
   ],
