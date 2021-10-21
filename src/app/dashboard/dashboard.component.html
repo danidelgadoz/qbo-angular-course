@@ -1,11 +1,17 @@
 <mat-toolbar color="primary">
   <span>Angular QBO</span>
 
-  <button mat-button [routerLink]="['example-component']">Components</button>
-  <button mat-button [routerLink]="['example-angular-material']">Material</button>
-  <button mat-button [routerLink]="['example-flex-layout']">FlexLayout</button>
-  <button mat-button [routerLink]="['example-directives-and-pipes']">Directives/Pipes</button>
-  <button mat-button [routerLink]="['products']">Products</button>
+  <div fxFlex="row">
+    <button mat-button [routerLink]="['example-component']">Components</button>
+    <button mat-button [routerLink]="['example-angular-material']">Material</button>
+    <button mat-button [routerLink]="['example-flex-layout']">FlexLayout</button>
+    <button mat-button [routerLink]="['example-directives-and-pipes']">Directives/Pipes</button>
+    <button mat-button [routerLink]="['products']">Products</button>
+
+    <div fxFlex></div>
+
+    <button mat-button (click)="onLogout()">Logout</button>
+  </div>
 
 </mat-toolbar>
 

@@ -5,15 +5,21 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input  matInput>
+      <input #inputEmail matInput>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput>
+      <input #inputPassword matInput>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Login</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit(inputEmail.value, inputPassword.value)"
+    >
+      Login
+    </button>
 
   </fieldset>
 
