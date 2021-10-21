@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -7,20 +8,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  products = [
-    { id: 1, name: 'Laptop Macbook Pro', price: 8000 },
-    { id: 2, name: 'Monitor Samsung', price: 1500.5 },
-    { id: 3, name: 'Keyboard magic 2', price: 800 },
-    { id: 4, name: 'Headphones', price: 150.3599 },
-  ];
+  products: any[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private productService: ProductService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    // TODO: Request for products from a API (backend) instead having them on hardcode
+    this.products = this.productService.getAllProducts();
   }
 
   onNavigateToProductDetail(id: number): void {
