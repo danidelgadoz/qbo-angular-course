@@ -2,9 +2,7 @@
 <ul>
   <li *ngFor="let p of products">
     <div (click)="onNavigateToProductDetail(p.id)">
-      {{p.name}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
+      {{p.productName}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
     </div>
   </li>
 </ul>
-
-<button (click)="onHandleAddProduct()">Add Product</button>

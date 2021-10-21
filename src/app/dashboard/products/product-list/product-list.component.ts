@@ -17,17 +17,17 @@ export class ProductListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getAllProducts();
+
+    this.productService.getAllProducts()
+      .subscribe((data) => {
+        this.products = data;
+      });
   }
 
   onNavigateToProductDetail(id: number): void {
     // this.router.navigate(['/products', id]);
     // Use this way to be more God
     this.router.navigate([id], { relativeTo: this.activatedRoute });
-  }
-
-  onHandleAddProduct(): void {
-    this.productService.addProduct({ id: 5, name: 'Funko', price: 50.99 })
   }
 
 }

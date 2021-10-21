@@ -23,6 +23,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AuthGuard } from './auth.guard';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'auth',
