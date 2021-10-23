@@ -1,15 +1,18 @@
 <h1>Login</h1>
 
-<form #loginForm="ngForm">
+<form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmit()">
   <fieldset fxLayout="column">
 
     <input
-      type="text"
+      required
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      type="email"
       name="email"
       placeholder="Email"
       [(ngModel)]="user.email">
 
     <input
+      required
       type="password"
       name="email"
       placeholder="Password"
@@ -26,9 +29,9 @@
     </mat-form-field> -->
 
     <button
+      type="submit"
       mat-raised-button
       color="primary"
-      (click)="onSubmit()"
     >
       Login
     </button>
