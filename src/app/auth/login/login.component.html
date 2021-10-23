@@ -3,27 +3,23 @@
 <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onSubmit()">
   <fieldset fxLayout="column">
 
-    <input
-      type="text"
-      name="email"
-      placeholder="Email"
-      formControlName="email">
-
-    <input
-      type="password"
-      name="password"
-      placeholder="Password"
-      formControlName="password">
-
-    <!-- <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        name="email"
+        formControlName="email"
+        matInput>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
-      <input matInput>
-    </mat-form-field> -->
+      <input
+        type="password"
+        name="password"
+        formControlName="password"
+        matInput>
+    </mat-form-field>
 
     <button
       type="submit"
