@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  user = {
+    email: 'dsds',
+    password: 'fdfdfd',
+  };
 
   constructor(
     private router: Router,
@@ -15,9 +19,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(email: string, password: string): void {
-    sessionStorage.setItem('userSession', '3661411c65331184ac73d8660d0b4648');
-    this.router.navigate(['dashboard']);
+  onSubmit(): void {
+    console.log('onSubmit', this.user)
+    // sessionStorage.setItem('userSession', '3661411c65331184ac73d8660d0b4648');
+    // this.router.navigate(['dashboard']);
   }
 
 }
