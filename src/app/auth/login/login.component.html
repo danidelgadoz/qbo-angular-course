@@ -10,6 +10,10 @@
         name="email"
         formControlName="email"
         matInput>
+
+      <mat-error *ngIf="loginForm.controls['email'].hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="loginForm.controls['email'].hasError('email')">Email is invalid</mat-error>
+
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -19,6 +23,8 @@
         name="password"
         formControlName="password"
         matInput>
+
+        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Password is required</mat-error>
     </mat-form-field>
 
     <button
