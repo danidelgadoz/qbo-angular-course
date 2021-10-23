@@ -23,7 +23,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth.guard';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppInterceptor } from './core/http/app.interceptor';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,9 @@ import { HttpClientModule } from '@angular/common/http';
       { path: '**', component: PageNotFoundComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
