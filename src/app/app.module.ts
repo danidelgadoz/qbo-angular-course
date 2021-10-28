@@ -25,6 +25,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './core/http/app.interceptor';
+import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AppInterceptor } from './core/http/app.interceptor';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    AuthComponent
+    AuthComponent,
+    ExampleRxjsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ import { AppInterceptor } from './core/http/app.interceptor';
           { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
           { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
           { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
+          { path: 'example-rxjs', component: ExampleRxjsComponent },
           { path: 'products', component: ProductListComponent },
           { path: 'products/:id', component: ProductDetailComponent },
         ]
