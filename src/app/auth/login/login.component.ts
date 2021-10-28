@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   isLoading = false;
+  loginSuscription!: Subscription;
 
   constructor(
     private authService: AuthService,
@@ -28,12 +30,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.loginSuscription?.unsubscribe();
+  }
+
   onSubmit(): void {
     const { email, password } = this.loginForm.value;
 
     this.isLoading = true;
 
-    this.authService.login(email, password)
+    this.loginSuscription = this.authService
+      .login(email, password)
       .pipe(
         finalize(() => this.isLoading = false)
       )
@@ -48,7 +55,6 @@ export class LoginComponent implements OnInit {
           });
         },
       );
-
 
   }
 
