@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from './product.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,8 @@ export class ProductService {
     private httpClient: HttpClient,
   ) { }
 
-  getAllProducts(): Observable<any> {
-    // TODO: Request for products from a API (backend) instead having them on hardcode
-    return this.httpClient.get('https://danidelgadoz.com/api/products')
+  getAllProducts(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>('https://danidelgadoz.com/api/products')
   }
 
   getProductById(id: string): any {
