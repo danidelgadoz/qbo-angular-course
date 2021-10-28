@@ -14,13 +14,14 @@
 
 <div class="module-body detail">
 
-  <div fxLayout="column">
+  <form [formGroup]="productForm" fxLayout="column">
 
     <mat-form-field appearance="outline">
       <mat-label>Description</mat-label>
       <input
         matInput
         name="description"
+        formControlName="description"
       />
     </mat-form-field>
 
@@ -29,6 +30,7 @@
       <input
         matInput
         name="imageUrl"
+        formControlName="imageUrl"
       />
     </mat-form-field>
 
@@ -37,6 +39,7 @@
       <input
         matInput
         name="price"
+        formControlName="price"
       />
     </mat-form-field>
 
@@ -45,6 +48,7 @@
       <input
         matInput
         name="productCode"
+        formControlName="productCode"
       />
     </mat-form-field>
 
@@ -53,6 +57,7 @@
       <input
         matInput
         name="productName"
+        formControlName="productName"
       />
     </mat-form-field>
 
@@ -61,6 +66,7 @@
       <input
         matInput
         name="releaseDate"
+        formControlName="releaseDate"
       />
     </mat-form-field>
 
@@ -69,17 +75,19 @@
       <input
         matInput
         name="starRating"
+        formControlName="starRating"
       />
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <!-- <mat-form-field appearance="outline">
       <mat-label>Tags</mat-label>
       <input
         matInput
         name="tags"
+        formControlName="tags"
       />
-    </mat-form-field>
+    </mat-form-field> -->
 
-  </div>
+  </form>
 
 </div>

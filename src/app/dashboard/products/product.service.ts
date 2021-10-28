@@ -16,9 +16,8 @@ export class ProductService {
     return this.httpClient.get<Product[]>('https://danidelgadoz.com/api/products')
   }
 
-  getProductById(id: string): any {
-    // TODO: Request for product from a API (backend) instead having them on hardcode
-    return null;
+  getProductById(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(`https://danidelgadoz.com/api/products/${id}`);
   }
 
   addProduct(product: any): any {
