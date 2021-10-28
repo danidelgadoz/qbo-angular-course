@@ -11,11 +11,30 @@
 </div>
 
 <div class="module-body">
-  <ul>
-    <li *ngFor="let p of products">
-      <div (click)="onNavigateToProductDetail(p.id)">
-        {{p.productName}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
-      </div>
-    </li>
-  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of products" (click)="onNavigateToProductDetail(p.id)">
+        <td>{{ p.id }}</td>
+        <td>{{ p.productCode }}</td>
+        <td>{{ p.productName }}</td>
+        <td>{{ p.price }}</td>
+        <td fxFlexLayout="row" fxLayoutAlign="center">
+          <img src="{{ p.imageUrl }}" alt="product-image">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
 </div>
