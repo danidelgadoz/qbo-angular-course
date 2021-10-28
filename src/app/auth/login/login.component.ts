@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { AuthService } from '../../core/services/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+  isLoading = false;
 
   constructor(
     private authService: AuthService,
@@ -29,7 +31,12 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     const { email, password } = this.loginForm.value;
 
+    this.isLoading = true;
+
     this.authService.login(email, password)
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
       .subscribe(
         (data) => {
           sessionStorage.setItem('userSession', '3661411c65331184ac73d8660d0b4648');
