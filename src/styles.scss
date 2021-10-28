@@ -1,4 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// STYLES FOR MODULE PAGES (p.e product module)
+.module {
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 16px;
+    background-color: #e8e8e8;
+
+    div.left {
+      h3 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0;
+      }
+    }
+
+    div.right {
+      button:last-child {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &-body {
+    &.list {
+      padding: 0;
+    }
+
+    &.detail {
+      padding: 16px 32px;
+
+      .item {
+        padding: 16px;
+        border-bottom: 1px solid #dcdcdc;
+
+        span {
+          font-weight: 600;
+        }
+
+        p {
+          margin: 0;
+        }
+
+        img {
+          display: block;
+          height: 250px;
+        }
+      }
+    }
+
+    &.form {
+      padding: 16px 32px;
+    }
+  }
+}

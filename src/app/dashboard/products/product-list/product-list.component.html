@@ -1,8 +1,21 @@
-<h3>Productos</h3>
-<ul>
-  <li *ngFor="let p of products">
-    <div (click)="onNavigateToProductDetail(p.id)">
-      {{p.productName}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
-    </div>
-  </li>
-</ul>
+<div class="module-header">
+  <div class="left">
+    <h3>Productos</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A distinctio animi, veniam voluptate doloribus esse.
+    </p>
+  </div>
+
+  <div class="right">
+    <button mat-raised-button color="prymary">ADD</button>
+  </div>
+</div>
+
+<div class="module-body">
+  <ul>
+    <li *ngFor="let p of products">
+      <div (click)="onNavigateToProductDetail(p.id)">
+        {{p.productName}} - {{p.price | currency: 'S/.':'symbol':'1.2-2' }}
+      </div>
+    </li>
+  </ul>
+</div>
