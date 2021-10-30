@@ -25,4 +25,8 @@ export class ProductService {
     return this.httpClient.post<Product>('https://danidelgadoz.com/api/products', body);
   }
 
+  updateProduct(product: Product): Observable<Product> {
+    return this.httpClient.put<Product>(`https://danidelgadoz.com/api/products/${product.id}`, product);
+  }
+
 }

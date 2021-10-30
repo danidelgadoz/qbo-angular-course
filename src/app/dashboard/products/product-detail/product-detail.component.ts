@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../product.interface';
 import { ProductService } from '../product.service';
 
 enum FormType {
@@ -74,8 +75,19 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const product = this.productForm.value;
+    const productFormValues = this.productForm.value;
 
+    if (this.formType === FormType.Create) {
+      this.requestForCreateProduct(productFormValues)
+    }
+
+    if (this.formType === FormType.Update) {
+      const productEditedValue = { ...productFormValues, id: this.id }
+      this.requestForUpdateProduct(productEditedValue);
+    }
+  }
+
+  requestForCreateProduct(product: Product): void {
     this.productService
       .createProduct(product)
       .subscribe(
@@ -90,7 +102,24 @@ export class ProductDetailComponent implements OnInit {
           });
         },
       )
+  }
 
+  requestForUpdateProduct(product: Product): void {
+    console.log("ProductDetailComponent::requestForUpdateProduct", product);
+    this.productService
+      .updateProduct(product)
+      .subscribe(
+        () => {
+          this.matSnackBar.open(`Product updated!`, 'OK', {
+            duration: 3000
+          });
+        },
+        (error) => {
+          this.matSnackBar.open(`Ups! ${error.error.message}`, 'OK', {
+            duration: 3000
+          });
+        },
+      )
   }
 
 }
