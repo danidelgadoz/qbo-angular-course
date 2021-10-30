@@ -5,46 +5,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from './shared/material.module';
 import { AppComponent } from './app.component';
-import { ExampleComponentComponent } from './dashboard/example/example-component/example-component.component';
-import { ExampleBootstrapComponent } from './dashboard/example/example-bootstrap/example-bootstrap.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExampleAngularMaterialComponent } from './dashboard/example/example-angular-material/example-angular-material.component';
-import { ExampleFlexLayoutComponent } from './dashboard/example/example-flex-layout/example-flex-layout.component';
-import { ExampleDirectivesAndPipesComponent } from './dashboard/example/example-directives-and-pipes/example-directives-and-pipes.component';
 import { HighlightDirective } from './dashboard/example/example-directives-and-pipes/highlight.directive';
 import { OnlyNumber } from './dashboard/example/example-directives-and-pipes/only-number.directive';
 import { ReversePipe } from './dashboard/example/example-directives-and-pipes/reverse.pipe';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductListComponent } from './dashboard/products/product-list/product-list.component';
-import { ProductDetailComponent } from './dashboard/products/product-detail/product-detail.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './core/http/app.interceptor';
-import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-rxjs.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExampleComponentComponent,
-    ExampleBootstrapComponent,
-    ExampleAngularMaterialComponent,
-    ExampleFlexLayoutComponent,
-    ExampleDirectivesAndPipesComponent,
     HighlightDirective,
     OnlyNumber,
     ReversePipe,
-    PageNotFoundComponent,
-    ProductListComponent,
-    ProductDetailComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    AuthComponent,
-    ExampleRxjsComponent
+    [...AppRoutingModule.components]
   ],
   imports: [
     BrowserModule,

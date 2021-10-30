@@ -53,4 +53,19 @@ const APP_ROUTES = [
     RouterModule
   ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  static components = [
+    ExampleComponentComponent,
+    ExampleAngularMaterialComponent,
+    ExampleFlexLayoutComponent,
+    ExampleDirectivesAndPipesComponent,
+    PageNotFoundComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    AuthComponent,
+    ExampleRxjsComponent
+  ];
+}
