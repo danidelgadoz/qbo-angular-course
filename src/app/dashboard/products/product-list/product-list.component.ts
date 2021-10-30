@@ -25,6 +25,10 @@ export class ProductListComponent implements OnInit {
       });
   }
 
+  onNavigateToNewProduct(): void {
+    this.router.navigate(['new'], { relativeTo: this.activatedRoute });
+  }
+
   onNavigateToProductDetail(id: number): void {
     // this.router.navigate(['/products', id]);
     // Use this way to be more God

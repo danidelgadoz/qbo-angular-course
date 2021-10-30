@@ -77,6 +77,7 @@ import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-r
           { path: 'example-rxjs', component: ExampleRxjsComponent },
           { path: 'products', component: ProductListComponent },
           { path: 'products/:id', component: ProductDetailComponent },
+          { path: 'products/new', component: ProductDetailComponent },
         ]
       },
       { path: '', redirectTo: 'auth', pathMatch: 'full' },
