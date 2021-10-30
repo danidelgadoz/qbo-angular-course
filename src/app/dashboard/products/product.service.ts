@@ -20,8 +20,9 @@ export class ProductService {
     return this.httpClient.get<Product>(`https://danidelgadoz.com/api/products/${id}`);
   }
 
-  addProduct(product: any): any {
-    // TODO: Request for product from a API (backend) instead having them on hardcode
+  createProduct(product: Product): Observable<Product> {
+    const body = product;
+    return this.httpClient.post<Product>('https://danidelgadoz.com/api/products', body);
   }
 
 }

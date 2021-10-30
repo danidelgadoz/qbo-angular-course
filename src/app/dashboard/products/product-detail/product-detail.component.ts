@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 
@@ -22,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
+    private matSnackBar: MatSnackBar
   ) {
   }
 
@@ -69,6 +71,26 @@ export class ProductDetailComponent implements OnInit {
       releaseDate: new FormControl(''),
       starRating: new FormControl(''),
     })
+  }
+
+  onSubmit(): void {
+    const product = this.productForm.value;
+
+    this.productService
+      .createProduct(product)
+      .subscribe(
+        () => {
+          this.matSnackBar.open(`Product created!`, 'OK', {
+            duration: 3000
+          });
+        },
+        (error) => {
+          this.matSnackBar.open(`Ups! ${error.error.message}`, 'OK', {
+            duration: 3000
+          });
+        },
+      )
+
   }
 
 }
