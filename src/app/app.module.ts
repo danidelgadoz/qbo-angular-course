@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from './shared/material.module';
@@ -22,10 +21,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth.component';
-import { AuthGuard } from './auth.guard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppInterceptor } from './core/http/app.interceptor';
 import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-rxjs.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -55,34 +54,7 @@ import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-r
     FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: 'auth',
-        component: AuthComponent,
-        children: [
-          { path: 'login', component: LoginComponent },
-          { path: 'register', component: RegisterComponent },
-          { path: '', redirectTo: 'login', pathMatch: 'full' },
-        ]
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        canActivate: [AuthGuard],
-        children: [
-          { path: 'example-component', component: ExampleComponentComponent },
-          { path: 'example-angular-material', component: ExampleAngularMaterialComponent },
-          { path: 'example-flex-layout', component: ExampleFlexLayoutComponent },
-          { path: 'example-directives-and-pipes', component: ExampleDirectivesAndPipesComponent },
-          { path: 'example-rxjs', component: ExampleRxjsComponent },
-          { path: 'products', component: ProductListComponent },
-          { path: 'products/:id', component: ProductDetailComponent },
-          { path: 'products/new', component: ProductDetailComponent },
-        ]
-      },
-      { path: '', redirectTo: 'auth', pathMatch: 'full' },
-      { path: '**', component: PageNotFoundComponent },
-    ])
+    AppRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
