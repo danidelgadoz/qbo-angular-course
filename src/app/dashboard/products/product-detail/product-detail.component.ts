@@ -87,6 +87,23 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
+  onDelete(): void {
+    this.productService
+      .deleteProduct(this.id)
+      .subscribe(
+        () => {
+          this.matSnackBar.open(`Product deleted!`, 'OK', {
+            duration: 3000
+          });
+        },
+        (error) => {
+          this.matSnackBar.open(`Ups! Something went wrong`, 'OK', {
+            duration: 3000
+          });
+        },
+      )
+  }
+
   requestForCreateProduct(product: Product): void {
     this.productService
       .createProduct(product)
@@ -97,7 +114,7 @@ export class ProductDetailComponent implements OnInit {
           });
         },
         (error) => {
-          this.matSnackBar.open(`Ups! ${error.error.message}`, 'OK', {
+          this.matSnackBar.open(`Ups! Something went wrong`, 'OK', {
             duration: 3000
           });
         },
@@ -115,7 +132,7 @@ export class ProductDetailComponent implements OnInit {
           });
         },
         (error) => {
-          this.matSnackBar.open(`Ups! ${error.error.message}`, 'OK', {
+          this.matSnackBar.open(`Ups! Something went wrong`, 'OK', {
             duration: 3000
           });
         },

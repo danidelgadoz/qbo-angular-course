@@ -29,4 +29,8 @@ export class ProductService {
     return this.httpClient.put<Product>(`https://danidelgadoz.com/api/products/${product.id}`, product);
   }
 
+  deleteProduct(id: string): Observable<Product> {
+    return this.httpClient.delete<Product>(`https://danidelgadoz.com/api/products/${id}`);
+  }
+
 }

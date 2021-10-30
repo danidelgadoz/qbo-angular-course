@@ -6,7 +6,9 @@
   </div>
 
   <div class="right">
-    <button mat-raised-button color="prymary">DELETE</button>
+    <button mat-raised-button color="prymary" *ngIf="formType === 1" (click)="onDelete()">
+      DELETE
+    </button>
     <button mat-raised-button color="prymary" (click)="onSubmit()">SAVE</button>
   </div>
 </div>
