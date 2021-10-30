@@ -1,6 +1,6 @@
 
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { ExampleComponentComponent } from './dashboard/example/example-component/example-component.component';
 import { ExampleAngularMaterialComponent } from './dashboard/example/example-angular-material/example-angular-material.component';
@@ -9,22 +9,14 @@ import { ExampleDirectivesAndPipesComponent } from './dashboard/example/example-
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './dashboard/products/product-list/product-list.component';
 import { ProductDetailComponent } from './dashboard/products/product-detail/product-detail.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth.guard';
 import { ExampleRxjsComponent } from './dashboard/example/example-rxjs/example-rxjs.component';
 
-const APP_ROUTES = [
+const APP_ROUTES: Routes = [
   {
     path: 'auth',
-    component: AuthComponent,
-    children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-    ]
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'dashboard',
@@ -62,10 +54,7 @@ export class AppRoutingModule {
     PageNotFoundComponent,
     ProductListComponent,
     ProductDetailComponent,
-    LoginComponent,
-    RegisterComponent,
     DashboardComponent,
-    AuthComponent,
     ExampleRxjsComponent
   ];
 }

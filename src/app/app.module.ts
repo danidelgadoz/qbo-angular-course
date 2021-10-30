@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './shared/material.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HighlightDirective } from './dashboard/example/example-directives-and-pipes/highlight.directive';
 import { OnlyNumber } from './dashboard/example/example-directives-and-pipes/only-number.directive';
 import { ReversePipe } from './dashboard/example/example-directives-and-pipes/reverse.pipe';
